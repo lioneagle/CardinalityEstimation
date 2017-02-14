@@ -6,6 +6,8 @@
 # Folders
 _obj
 _test
+pkg
+bin
 
 # Architecture specific extensions/prefixes
 *.[568vq]
@@ -19,6 +21,17 @@ _cgo_export.*
 
 _testmain.go
 
+*_cover.out
+*.exe
+*_coverage.html
+*_cpu.out
+test_temp
+*.csv
+
 *.exe
 *.test
 *.prof
+
+#sublime
+*.sublime-project
+*.sublime-workspace
