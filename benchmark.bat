@@ -7,15 +7,15 @@ goto end
 call env.bat
 
 if not exist test_temp mkdir test_temp
-if exist .\test_temp\%1.test.exe  del .\test_temp\%1.test.exe
+if exist .\test_temp\test.exe  del .\test_temp\test.exe
 
-go test %1 -bench=. -cpuprofile=.\test_temp\%1_cpu.prof %2
-if not exist ./test_temp/%1_cpu.prof goto end
+go test %1 -bench=. -cpuprofile=.\test_temp\cpu.prof %2
+if not exist ./test_temp/cpu.prof goto end
 
 go test %1 -bench=. -c
 
-if not exist %1.test.exe goto end
-move %1.test.exe .\test_temp\%1.test.exe
+if not exist test.exe goto end
+move test.exe .\test_temp\test.exe
 
 :end
 echo finished
