@@ -98,22 +98,23 @@ func BenchmarkAdler32(b *testing.B) {
 	}
 }
 
+//var data = new([10000][10000]int32)
 var data [10000][10000]int32
+
+func BenchmarkCount2(b *testing.B) {
+	b.StartTimer()
+	for i := 1; i < 9000; i++ {
+		for j := 1; j < 9000; j++ {
+			data[j][i] = 1
+		}
+	}
+}
 
 func BenchmarkCount1(b *testing.B) {
 	b.StartTimer()
 	for i := 1; i < 10000; i++ {
 		for j := 1; j < 10000; j++ {
 			data[i][j] = 1
-		}
-	}
-}
-
-func BenchmarkCount2(b *testing.B) {
-	b.StartTimer()
-	for i := 1; i < 10000; i++ {
-		for j := 1; j < 10000; j++ {
-			data[j][i] = 1
 		}
 	}
 }
